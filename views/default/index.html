@@ -1,0 +1,15 @@
+{{extend 'layout.html'}}
+
+<h2>Blog post</h2>
+{{=form}}
+<h2>Old posts</h2>
+<table class="table">
+    {{for row in rows:}}
+    <tr>
+        <td><a href="{{=URL('show',args=row.id)}}">{{=row.title}}</a></td>
+        <td>
+            {{=row.time_stamp}}
+        </td>
+    </tr>
+    {{pass}}
+</table>
